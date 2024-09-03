@@ -147,7 +147,7 @@ router.post("/signin", (req, res) => {
   });
 });
 router.get('/dashboard', authenticateToken, (req, res) => {
-  res.json({ message: `Welcome, ${req.user.username}!` });
+  res.json({ message: `${req.user.email}` });
 });
 router.post('/logout', (req, res) => {
   // This endpoint is primarily for demonstration.

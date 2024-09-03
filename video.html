@@ -15,7 +15,7 @@
   <script>
     document.getElementById('start-call').addEventListener('click', async () => {
         const token2 = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/service/token', {
+      const response = await fetch('https:/cbt.server.ijebr.com/service/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

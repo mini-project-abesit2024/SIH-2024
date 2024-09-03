@@ -21,6 +21,7 @@
     "mysql2": "^3.11.0",
     "nodemon": "^3.1.4",
     "path": "^0.12.7",
+    "preline": "^2.4.1",
     "twilio": "^5.2.3",
     "twilio-client": "^1.15.1"
   }
