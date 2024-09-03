@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p>Welcome to your dashboard!</p>
+    <a href="/video.html">VideoConfress</a>
+    <button id="logoutButton">Logout</button>
+
+    <script>
+        // Function to check authentication and redirect if not authenticated
+        async function checkAuth() {
+            const token = localStorage.getItem('token');
+
+            if (!token) {
+                window.location.href = '/login.html';
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/dashboard', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    window.location.href = '/login.html';
+                } else if (!response.ok) {
+                    console.error('Error:', await response.text());
+                    window.location.href = '/login.html';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                window.location.href = '/login.html';
+            }
+        }
+
+        // Call checkAuth to ensure the user is authenticated
+        checkAuth();
+
+        // Add event listener to logout button
+        document.getElementById('logoutButton').addEventListener('click', async () => {
+            const token = localStorage.getItem('token');
+
+            if (!token) {
+                alert('You are not logged in');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    // Remove the token and redirect to login page
+                    alert("Logging off successfully")
+                    localStorage.removeItem('token');
+                    window.location.href = '/sign-in.html';
+                } else {
+                    alert('Logout failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred during logout');
+            }
+        });
+    </script>
+</body>
+</html>

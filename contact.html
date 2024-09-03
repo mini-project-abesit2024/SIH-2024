@@ -93,7 +93,7 @@
                         </div>
 
                         <div class="block md:hidden">
-                            <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                            <button id="menu-toggle" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -104,6 +104,17 @@
                 </div>
             </div>
         </div>
+        <div id="navbar" class="hidden">
+          <div class="flex justify-center text-center items-center px-4 py-3 text-gray-500 bg-gray-100">
+              <div class="flex flex-col w-full gap-2">
+                  <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="aboutus.html"> About </a>
+  
+                  <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/service.html"> Services </a>
+                  <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/cbt-toolkit.html"> CBT ToolKit </a>
+                  <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/cbt-training.html"> CBT Training </a>
+                  <a class="text-teal-600 border  border-teal-600 w-full hover:text-gray-800" href="/contact.html">Contact</a>
+    
+          </div>
     </header>
 
 
@@ -159,7 +170,7 @@
           alt="map"
           class="w-full h-full lg:max-h-[510px]"
         />
-        <form action="#" class="flex flex-col gap-4 lg:max-w-sm">
+        <form id="contact-form" class="flex flex-col gap-4 lg:max-w-sm">
           <p
             class="block antialiased font-sans text-sm leading-normal text-inherit text-left !font-semibold !text-gray-600"
           >
@@ -190,7 +201,7 @@
               <div class="relative w-full h-11 !min-w-full">
                 <input
                   placeholder="First Name"
-                  name="first-name"
+                  name="first_name"
                   class="peer w-full h-full bg-transparent font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md !border !border-gray-300 text-gray-900 placeholder:!text-gray-500 focus:!border-gray-900 focus:!border-2 focus:border-t-gray-900"
                 /><label
                   class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900 hidden"
@@ -207,7 +218,7 @@
               <div class="relative w-full h-11 !min-w-full">
                 <input
                   placeholder="Last Name"
-                  name="last-name"
+                  name="last_name"
                   class="peer w-full h-full bg-transparent font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md !border !border-gray-300 text-gray-900 placeholder:!text-gray-500 focus:!border-gray-900 focus:!border-2 focus:border-t-gray-900"
                 /><label
                   class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900 hidden"
@@ -261,6 +272,7 @@
             </div>
           </div>
           <button
+            type="submit"
             class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none bg-teal-600 w-full"
             type="button"
             data-ripple-light="true"
@@ -479,6 +491,38 @@
           </p>
         </div>
       </div>
+      <script src="js/main.js"></script>
+      <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+          
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+      const formobj = {}
+      formData.forEach((value, key) => {
+          formobj[key] =  value;
+      })
+
+      fetch('http://localhost:3000/contact', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formobj)
+      } )
+      .then(response => response.json())
+      .then(data => {
+          //  console.log('Success:', data);
+           alert("Form submitted successfully");
+           event.target.reset(); // Clear the form after submission
+       })
+       .catch((error) => {
+          console.error('Error:', error);
+          alert("Failed to submit form");
+       });
+      
+      })
+      </script>
 </body>
 
 </html>

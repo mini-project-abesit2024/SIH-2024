@@ -218,80 +218,67 @@
             </p>
           </div>
 
-          <form id="sign-in" class="mt-8 grid grid-cols-6 gap-6">
-            <div class="col-span-6 sm:col-span-3">
-              <label for="FirstName" class="block text-sm font-medium text-gray-700">
-                First Name
-              </label>
+          <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<!--
+  This example requires updating your template:
 
-              <input type="text" id="FirstName" name="first_name"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600" alt="Your Company">
+      <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+    </div>
+  
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form class="space-y-6" id="loginForm" method="POST">
+        <div>
+          <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+          <div class="mt-2">
+            <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+  
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+            <div class="text-sm">
+              <a href="#" class="font-semibold text-teal-600 hover:text-teal-500">Forgot password?</a>
             </div>
-
-            <div class="col-span-6 sm:col-span-3">
-              <label for="LastName" class="block text-sm font-medium text-gray-700">
-                Last Name
-              </label>
-
-              <input type="text" id="LastName" name="last_name"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
-            </div>
-
-            <div class="col-span-6">
-              <label for="Email" class="block text-sm font-medium text-gray-700"> Email </label>
-
-              <input type="email" id="Email" name="email"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
-            </div>
-
-            <div class="col-span-6 sm:col-span-3">
-              <label for="Password" class="block text-sm font-medium text-gray-700"> Password </label>
-
-              <input type="password" id="Password" name="password"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
-            </div>
-
-            <div class="col-span-6 sm:col-span-3">
-              <label for="PasswordConfirmation" class="block text-sm font-medium text-gray-700">
-                Password Confirmation
-              </label>
-
-              <input type="password" id="PasswordConfirmation" name="password_confirmation"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
-            </div>
-
-            <!-- <div class="col-span-6">
-              <label for="MarketingAccept" class="flex gap-4">
-                <input type="checkbox" id="MarketingAccept" name="marketing_accept"
-                  class="size-5 rounded-md border-gray-200 bg-white shadow-sm" />
-
-                <span class="text-sm text-gray-700">
-                  I want to receive emails about events, product updates and company announcements.
-                </span>
-              </label>
-            </div> -->
-
-            <div class="col-span-6">
-              <p class="text-sm text-gray-500">
-                By creating an account, you agree to our
-                <a href="#" class="text-gray-700 underline"> terms and conditions </a>
-                and
-                <a href="#" class="text-gray-700 underline">privacy policy</a>.
-              </p>
-            </div>
-
-            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-              <button id="" type="submit"
-                class="inline-block shrink-0 rounded-md border border-teal-600 bg-teal-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-teal-600 focus:outline-none focus:ring active:text-blue-500">
-                Create an account
-              </button>
-
-              <p class="mt-4 text-sm text-gray-500 sm:mt-0">
-                Already have an account?
-                <a href="/sign-in.html" class="text-gray-700 underline">Log in</a>.
-              </p>
-            </div>
-          </form>
+          </div>
+          <div class="mt-2">
+            <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6">
+          </div>
+        </div>
+  
+        <div>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-teal-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">Sign in</button>
+        </div>
+      </form>
+  
+      <p class="mt-10 text-center text-sm text-gray-500">
+        Not a member?
+        <a href="/sign-up.html" class="font-semibold underline leading-6 text-teal-600 hover:text-teal-600">Create an account in single click</a>
+      </p>
+    </div>
+  </div>
+  
         </div>
       </main>
     </div>
@@ -355,14 +342,14 @@
               </p>
             </div>
 
-            <form id="sign-in" class="mt-6 w-full">
+            <form class="mt-6 w-full">
               <label for="UserEmail" class="sr-only"> Email </label>
 
               <div class="rounded-md border border-gray-100 p-2 focus-within:ring sm:flex sm:items-center sm:gap-4">
                 <input type="email" id="UserEmail" placeholder="john@rhcp.com"
                   class="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm" />
 
-                <button type="submit"
+                <button
                   class="mt-1 w-full rounded bg-teal-500 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">
                   Sign Up
                 </button>
@@ -506,33 +493,38 @@
   </div>
   <script src="js/main.js"></script>
   <script>
-    document.getElementById("sign-in").addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
 
-      const formobj = {}
-      formData.forEach((value, key) => {
-          formobj[key] =  value;
-      })
-      // console.log(formobj);
-      fetch('http://localhost:3000/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formobj),
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
- 
-                window.location.href = '/sign-in.html';
-
-            })
-            .catch((error) => {
-                console.error('Error:', error);
+            const formobj = {};
+            formData.forEach((value, key) => {
+                formobj[key] = value;
             });
-    })
+
+            try {
+                const response = await fetch('http://localhost:3000/signin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formobj),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log('Login successful:', data);
+                    localStorage.setItem('token', data.token);
+                    window.location.href = '/cs.dashboard.html';
+                } else {
+                    alert(data.error || 'Login failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred during login');
+            }
+        });
   </script>
 </body>
 

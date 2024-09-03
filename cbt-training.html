@@ -93,7 +93,7 @@
                         </div>
 
                         <div class="block md:hidden">
-                            <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                            <button id="menu-toggle" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -104,6 +104,17 @@
                 </div>
             </div>
         </div>
+        <div id="navbar" class="hidden">
+            <div class="flex justify-center text-center items-center px-4 py-3 text-gray-500 bg-gray-100">
+                <div class="flex flex-col w-full gap-2">
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="aboutus.html"> About </a>
+    
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/service.html"> Services </a>
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/cbt-toolkit.html"> CBT ToolKit </a>
+                    <a class="text-teal-600 border border-teal-600  w-full hover:text-gray-800" href="/cbt-training.html"> CBT Training </a>
+                    <a class="text-gray-600 border  border-teal-600 w-full hover:text-gray-800" href="/contact.html">Contact</a>
+      
+            </div>
     </header>
     <section
     class="overflow-hidden bg-teal-600 bg-cover bg-top bg-no-repeat"
@@ -323,6 +334,7 @@
           </p>
         </div>
       </div>
+      <script src="js/main.js"></script>
 </body>
 
 </html>
