@@ -170,15 +170,15 @@
       <div class="bg-teal-600 px-4 py-3 text-white">
         <p class="text-center text-sm font-medium">
           Design and Developed by
-          <!-- <a
+          <a
             href="https://chiragtyagi.netlify.app"
             class="inline-block underline"
             >@Chirag_Creates
-          </a> -->
+          </a>
         </p>
       </div>
     </div>
-    <script src="../js/main.js"></script>
+
     <script>
       document
         .getElementById("admin-login")
@@ -190,7 +190,7 @@
             formobj[key] = value;
           });
           try {
-            const response = await fetch("https://cbt.server.ijebr.com/admin/signin", {
+            const response = await fetch("http://localhost:3000/admin/signin", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

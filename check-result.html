@@ -1,19 +1,41 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>CBT- Toolkit CBT- Congutative longutative etc</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/android-chrome-192x192.png">
-    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
 </head>
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .alert {
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .alert-warning {
+        background-color: #b6bd69;
+        color: white;
+        border: 1px solid #f5c6cb;
+    }
+</style>
 
 <body>
     <header class="bg-white p-4">
@@ -63,23 +85,28 @@
                     <nav aria-label="Global" class="hidden md:block">
                         <ul class="flex items-center gap-6 text-m">
                             <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/aboutus.html"> About </a>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/aboutus.html"> About
+                                </a>
                             </li>
 
                             <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/service.html"> Services </a>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/service.html">
+                                    Services </a>
                             </li>
 
                             <li>
-                                <a class="text-peal-500 transition hover:text-gray-500/75" href="/cbt-toolkit.html"> CBT ToolKit </a>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="./cbt-toolkit.html">
+                                    CBT ToolKit </a>
                             </li>
 
                             <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/cbt-training.html"> CBT Training </a>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/cbt-training.html">
+                                    CBT Training </a>
                             </li>
 
                             <li>
-                                <a class="text-gray-600 transition hover:text-gray-500/75" href="/contact.html"> Contact </a>
+                                <a class="text-gray-600 transition hover:text-gray-500/75" href="/contact.html"> Contact
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -93,7 +120,8 @@
                         </div>
 
                         <div class="block md:hidden">
-                            <button id="menu-toggle" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                            <button id="menu-toggle"
+                                class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -107,28 +135,87 @@
         <div id="navbar" class="hidden">
             <div class="flex justify-center text-center items-center px-4 py-3 text-gray-500 bg-gray-100">
                 <div class="flex flex-col w-full gap-2">
-                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="aboutus.html"> About </a>
-    
-                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/service.html"> Services </a>
-                    <a class="text-teal-600 border border-teal-600  w-full hover:text-gray-800" href="/cbt-toolkit.html"> CBT ToolKit </a>
-                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/cbt-training.html"> CBT Training </a>
-                    <a class="text-gray-600 border  border-teal-600 w-full hover:text-gray-800" href="/contact.html">Contact</a>
-      
-            </div>
+                    <a class="text-grey-600 border border-teal-600  w-full hover:text-gray-800" href="aboutus.html">
+                        About </a>
+
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/service.html">
+                        Services </a>
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800"
+                        href="/cbt-toolkit.html"> CBT ToolKit </a>
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800"
+                        href="/cbt-training.html"> CBT Training </a>
+                    <a class="text-gray-600 border  border-teal-600 w-full hover:text-gray-800"
+                        href="/contact.html">Contact</a>
+
+                </div>
     </header>
+    <section class="overflow-hidden bg-teal-600 bg-cover bg-top bg-no-repeat">
+        <div class="bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24">
+            <div class="text-center ltr:sm:text-left rtl:sm:text-right">
+                <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl">Check your status</h2>
+            </div>
+        </div>
+    </section>
 
-    <section
-  class="overflow-hidden bg-teal-600 bg-cover bg-top bg-no-repeat"
->
-  <div class="bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24">
-    <div class="text-center ltr:sm:text-left rtl:sm:text-right">
-      <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl">CBT -Toolkit.</h2>
+    <!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-lg text-center">
+      <h1 class="text-2xl font-bold sm:text-3xl">Check Your Account Status !</h1>
+  
+      <p class="mt-4 text-gray-500">
+        Check your account status is your status is verified check your email  for the the login credentials...
+      </p>
     </div>
+  
+    <form id="check" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+      <div class="flex gap-4">
+        <label for="email" class="sr-only">Email</label>
+  
+        <div class="relative">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter email"
+          />
+  
+          <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+              />
+            </svg>
+          </span>
+        </div>
+        <button
+        type="submit"
+        class="inline-block rounded-lg bg-teal-600 px-5 py-3 text-sm font-medium text-white"
+      >
+      Check Status
+      </button>
+      </div>
+    <div id="messageDiv" class="hidden"></div>
+      <div class="flex  items-center justify-center">
+      </div>
+    </form>
   </div>
-</section>
-
-
-
     <footer class=" mt-5 bg-white">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2">
@@ -196,6 +283,7 @@
                                     class="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm" />
 
                                 <button
+                                type="submit"
                                     class="mt-1 w-full rounded bg-teal-500 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">
                                     Sign Up
                                 </button>
@@ -335,7 +423,47 @@
           </p>
         </div>
       </div>
-      <script src="js/main.js"></script>
+    <script>
+        document.getElementById('check').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const messageDiv = document.getElementById('messageDiv');
+            const email = document.getElementById('email').value;
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (regex.test(email)) {
+
+                fetch('http://localhost:3000/doctor/check', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                }).then(response => response.json())
+                    .then(data => {
+                        messageDiv.classList.remove('hidden');
+                        messageDiv.textContent = data.message;
+
+                        if (data.status === 'Approved') {
+                            messageDiv.className = 'alert alert-success';
+                        } else if (data.status === 'pending') {
+                            messageDiv.className = 'alert alert-warning';
+
+                        } else {
+                            messageDiv.className = 'alert alert-error';
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        messageDiv.classList.remove('hidden');
+                        messageDiv.textContent = 'An error occurred. Please try again.';
+                        messageDiv.className = 'alert alert-error';
+                    });
+            } else {
+                messageDiv.classList.remove('hidden');
+                messageDiv.textContent = 'Please enter a valid email address';
+                messageDiv.className = 'alert alert-error';
+            }
+        });
+    </script>
 </body>
 
 </html>

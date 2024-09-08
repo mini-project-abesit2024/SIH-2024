@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>CBT- Toolkit CBT- Congutative longutative etc</title>
+    <title>Job Inquery- CBT- Congutative longutative etc</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
@@ -63,23 +63,28 @@
                     <nav aria-label="Global" class="hidden md:block">
                         <ul class="flex items-center gap-6 text-m">
                             <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/aboutus.html"> About </a>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/aboutus.html"> About
+                                </a>
                             </li>
 
                             <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/service.html"> Services </a>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/service.html">
+                                    Services </a>
                             </li>
 
                             <li>
-                                <a class="text-peal-500 transition hover:text-gray-500/75" href="/cbt-toolkit.html"> CBT ToolKit </a>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="./cbt-toolkit.html">
+                                    CBT ToolKit </a>
                             </li>
 
                             <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/cbt-training.html"> CBT Training </a>
+                                <a class="text-gray-500 transition hover:text-gray-500/75" href="/cbt-training.html">
+                                    CBT Training </a>
                             </li>
 
                             <li>
-                                <a class="text-gray-600 transition hover:text-gray-500/75" href="/contact.html"> Contact </a>
+                                <a class="text-gray-600 transition hover:text-gray-500/75" href="/contact.html"> Contact
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -93,7 +98,8 @@
                         </div>
 
                         <div class="block md:hidden">
-                            <button id="menu-toggle" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                            <button id="menu-toggle"
+                                class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -107,27 +113,131 @@
         <div id="navbar" class="hidden">
             <div class="flex justify-center text-center items-center px-4 py-3 text-gray-500 bg-gray-100">
                 <div class="flex flex-col w-full gap-2">
-                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="aboutus.html"> About </a>
-    
-                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/service.html"> Services </a>
-                    <a class="text-teal-600 border border-teal-600  w-full hover:text-gray-800" href="/cbt-toolkit.html"> CBT ToolKit </a>
-                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/cbt-training.html"> CBT Training </a>
-                    <a class="text-gray-600 border  border-teal-600 w-full hover:text-gray-800" href="/contact.html">Contact</a>
-      
-            </div>
+                    <a class="text-grey-600 border border-teal-600  w-full hover:text-gray-800" href="aboutus.html">
+                        About </a>
+
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800" href="/service.html">
+                        Services </a>
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800"
+                        href="/cbt-toolkit.html"> CBT ToolKit </a>
+                    <a class="text-gray-600 border border-teal-600  w-full hover:text-gray-800"
+                        href="/cbt-training.html"> CBT Training </a>
+                    <a class="text-gray-600 border  border-teal-600 w-full hover:text-gray-800"
+                        href="/contact.html">Contact</a>
+
+                </div>
     </header>
+    <main>
+        <!--
+  Heads up! 👋
 
-    <section
-  class="overflow-hidden bg-teal-600 bg-cover bg-top bg-no-repeat"
->
-  <div class="bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24">
-    <div class="text-center ltr:sm:text-left rtl:sm:text-right">
-      <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl">CBT -Toolkit.</h2>
+  Plugins:
+    - @tailwindcss/forms
+-->
+
+<section class="relative flex flex-wrap lg:h-screen lg:items-center">
+    <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-lg text-center">
+        <h1 class="text-2xl font-bold sm:text-3xl">Get started today!</h1>
+  
+        <p class="mt-4 text-gray-500">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla eaque error neque
+          ipsa culpa autem, at itaque nostrum!
+        </p>
+      </div>
+  
+      <form id="doctorForm"  enctype="multipart/form-data" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+      <div>
+        <div>
+            <label for="full_name" class="sr-only">Full Name :</label>
+    
+            <div class="relative">
+              <input
+                type="text"
+                id="full_name"
+                name="full_name"
+                class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                placeholder="Enter Full Name"
+                required
+              />
+            </div>
+          </div>
+      </div>
+        <div>
+          <label for="email" class="sr-only">Email</label>
+  
+          <div class="relative">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+              placeholder="Enter email"
+              required
+            />
+  
+            <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-4 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+  
+       
+        <div>
+            <label class="sr-only" for="message">About</label>
+
+            <textarea
+              class="w-full rounded-lg border-gray-200 p-3 text-sm shadow-sm"
+              placeholder="Message"
+              rows="8"
+              id="about"
+              name="about"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <input class="w-full rounded-lg border-gray-200  p-4 pe-12 text-sm shadow-sm" accept="application/pdf"  type="file" name="resume" id="resume">
+            <p class="mt-1 text-sm text-gray-500 " id="file_input_help">Resume (PDF ONLY).</p>
+        </div>
+  
+        <div class="flex items-center justify-between">
+          <p class="text-sm text-gray-500">
+            submitted?
+            <a class="underline" href="/check-result.html">Check Status</a>
+          </p>
+  
+          <button
+            type="submit"
+            class="inline-block rounded-lg bg-teal-600 px-5 py-3 text-sm font-medium text-white"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
-  </div>
-</section>
-
-
+  
+    <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
+      <img
+        alt=""
+        src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+  </section>
+    </main>
 
     <footer class=" mt-5 bg-white">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -329,13 +439,34 @@
     </footer>
     <div class="fixed inset-x-0 bottom-0">
         <div class="bg-teal-600 px-4 py-3 text-white">
-          <p class="text-center text-sm font-medium">
-            Design and Developed by
-            <a href="https://chiragtyagi.netlify.app" class="inline-block underline">@Chirag_Creates </a>
-          </p>
+            <p class="text-center text-sm font-medium">
+                Design and Developed by
+                <a href="https://chiragtyagi.netlify.app" class="inline-block underline">@Chirag_Creates </a>
+            </p>
         </div>
-      </div>
-      <script src="js/main.js"></script>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById("doctorForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            try {
+                const response = await fetch('http://localhost:3000/doctor/submit-form', {
+                    method: 'POST',
+                    body: formData,
+                });
+                if (response.ok) {
+                    event.target.reset();
+                    alert("Form submitted successfully");
+                }
+                const data = await response.json();
+                window.location.href = '/check-result.html'
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+    </script>
 </body>
 
 </html>
