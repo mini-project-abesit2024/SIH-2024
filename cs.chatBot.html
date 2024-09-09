@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini AI Chat - CBT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Optional: Custom styles for the chat container */
+        #chatContainer::-webkit-scrollbar {
+            width: 8px;
+        }
+        #chatContainer::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="flex">
+        <div class="flex fixed h-screen w-16 flex-col justify-between border-e bg-white">
+            <div>
+                <div class="p-4 inline-flex size-16 items-center justify-center">
+                    <svg id="logo-37" width="42" height="38" viewBox="0 0 42 38" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.74661 28.7259C7.28678 29.8002 9.78389 29.8002 11.3241 28.7259C12.8642 27.6516 12.8642 25.9098 11.3241 24.8355C9.78389 23.7612 7.28678 23.7612 5.74661 24.8355C4.20644 25.9098 4.20644 27.6516 5.74661 28.7259Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                        <path
+                            d="M21.7322 14.1371C24.0425 15.7485 27.7881 15.7485 30.0984 14.1371C32.4086 12.5256 32.4086 9.91298 30.0984 8.30155C27.7881 6.69011 24.0425 6.69011 21.7322 8.30155C19.422 9.91298 19.422 12.5256 21.7322 14.1371Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                        <path
+                            d="M13.2464 21.4315C15.1716 22.7743 18.293 22.7743 20.2182 21.4315C22.1434 20.0886 22.1434 17.9114 20.2182 16.5685C18.293 15.2257 15.1716 15.2257 13.2464 16.5685C11.3212 17.9114 11.3212 20.0886 13.2464 21.4315Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                        <path
+                            d="M0.866345 20.4589C2.02147 21.2646 3.8943 21.2646 5.04943 20.4589C6.20455 19.6532 6.20455 18.3469 5.04943 17.5411C3.8943 16.7354 2.02147 16.7354 0.866345 17.5411C-0.288782 18.3469 -0.288781 19.6532 0.866345 20.4589Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                        <path
+                            d="M13.2464 5.87008C15.1716 7.21294 18.293 7.21294 20.2182 5.87008C22.1434 4.52722 22.1434 2.35001 20.2182 1.00715C18.293 -0.335715 15.1716 -0.335716 13.2464 1.00715C11.3212 2.35001 11.3212 4.52722 13.2464 5.87008Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                        <path
+                            d="M5.74661 13.1645C7.28678 14.2388 9.78389 14.2388 11.3241 13.1645C12.8642 12.0902 12.8642 10.3484 11.3241 9.27415C9.78389 8.19986 7.28678 8.19986 5.74661 9.27415C4.20644 10.3484 4.20645 12.0902 5.74661 13.1645Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                        <path
+                            d="M13.2464 36.9929C15.1716 38.3357 18.293 38.3357 20.2182 36.9929C22.1434 35.65 22.1434 33.4728 20.2182 32.1299C18.293 30.7871 15.1716 30.7871 13.2464 32.1299C11.3212 33.4728 11.3212 35.65 13.2464 36.9929Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                        <path
+                            d="M31.9011 21.9178C34.2114 23.5292 37.9571 23.5292 40.2673 21.9178C42.5776 20.3064 42.5776 17.6937 40.2673 16.0823C37.9571 14.4708 34.2114 14.4708 31.9011 16.0823C29.5909 17.6937 29.5909 20.3064 31.9011 21.9178Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                        <path
+                            d="M21.7322 29.6984C24.0425 31.3099 27.7881 31.3099 30.0984 29.6984C32.4086 28.087 32.4086 25.4744 30.0984 23.8629C27.7881 22.2515 24.0425 22.2515 21.7322 23.8629C19.422 25.4744 19.422 28.087 21.7322 29.6984Z"
+                            class="ccustom" fill="#25CAAC"></path>
+                    </svg>
+                </div>
+
+                <div class="border-t border-gray-100">
+                    <div class="px-2">
+                        <div class="py-4">
+                            <a href="#"
+                                class="t group relative flex justify-center rounded bg-teal-50 px-2 py-1.5 text-teal-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="size-5 opacity-75" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+
+                                <span
+                                    class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
+                                    General
+                                </span>
+                            </a>
+                        </div>
+
+                        <ul class="space-y-1 border-t border-gray-100 pt-4">
+                            <li>
+                                <a href="cs.doctor.html"
+                                    class="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5 opacity-75" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+
+                                    <span
+                                        class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
+                                    Doctors
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5 opacity-75" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                    </svg>
+
+                                    <span
+                                        class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
+                                        Billing
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5 opacity-75" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+
+                                    <span
+                                        class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
+                                        Invoices
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5 opacity-75" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+
+                                    <span
+                                        class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
+                                        Account
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2">
+                <form>
+                    <button id="logoutButton" type="submit"
+                        class="group relative flex w-full justify-center rounded-lg px-2 py-1.5 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5 opacity-75" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+
+                        <span
+                            class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
+                            Logout
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="w-full ml-[60px]">
+            <div class="bg-teal-600 px-4 py-3 text-white sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
+                <br>
+                <p class="text-center font-medium sm:text-left">
+                    Welcome to your dashboard! <span class="underline" id="user"></span>
+                </p>
+            </div>
+            
+            <!-- here add -->
+         
+            <!--  -->
+            <!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+<div class="h-dvh">
+    <section class=" ml-4 bg-white">
+        <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
+          <section class="relative flex h-4/5 items-end bg-gray-900 lg:col-span-5  xl:col-span-6">
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGFpJTIwY2hhdGJvdHxlbnwwfHwwfHx8MA%3D%3D"
+              class="absolute inset-0 h-full w-full object-cover opacity-80"
+            />
+      
+            <div class="hidden lg:relative lg:block lg:p-12">
+              <a class="block text-white" href="#">
+                <span class="sr-only">Home</span>
+                <svg id="logo-37" width="42" height="38" viewBox="0 0 42 38" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M5.74661 28.7259C7.28678 29.8002 9.78389 29.8002 11.3241 28.7259C12.8642 27.6516 12.8642 25.9098 11.3241 24.8355C9.78389 23.7612 7.28678 23.7612 5.74661 24.8355C4.20644 25.9098 4.20644 27.6516 5.74661 28.7259Z"
+                    class="ccustom" fill="#25CAAC"></path>
+                <path
+                    d="M21.7322 14.1371C24.0425 15.7485 27.7881 15.7485 30.0984 14.1371C32.4086 12.5256 32.4086 9.91298 30.0984 8.30155C27.7881 6.69011 24.0425 6.69011 21.7322 8.30155C19.422 9.91298 19.422 12.5256 21.7322 14.1371Z"
+                    class="ccustom" fill="#25CAAC"></path>
+                <path
+                    d="M13.2464 21.4315C15.1716 22.7743 18.293 22.7743 20.2182 21.4315C22.1434 20.0886 22.1434 17.9114 20.2182 16.5685C18.293 15.2257 15.1716 15.2257 13.2464 16.5685C11.3212 17.9114 11.3212 20.0886 13.2464 21.4315Z"
+                    class="ccustom" fill="#25CAAC"></path>
+                <path
+                    d="M0.866345 20.4589C2.02147 21.2646 3.8943 21.2646 5.04943 20.4589C6.20455 19.6532 6.20455 18.3469 5.04943 17.5411C3.8943 16.7354 2.02147 16.7354 0.866345 17.5411C-0.288782 18.3469 -0.288781 19.6532 0.866345 20.4589Z"
+                    class="ccustom" fill="#25CAAC"></path>
+                <path
+                    d="M13.2464 5.87008C15.1716 7.21294 18.293 7.21294 20.2182 5.87008C22.1434 4.52722 22.1434 2.35001 20.2182 1.00715C18.293 -0.335715 15.1716 -0.335716 13.2464 1.00715C11.3212 2.35001 11.3212 4.52722 13.2464 5.87008Z"
+                    class="ccustom" fill="#25CAAC"></path>
+                <path
+                    d="M5.74661 13.1645C7.28678 14.2388 9.78389 14.2388 11.3241 13.1645C12.8642 12.0902 12.8642 10.3484 11.3241 9.27415C9.78389 8.19986 7.28678 8.19986 5.74661 9.27415C4.20644 10.3484 4.20645 12.0902 5.74661 13.1645Z"
+                    class="ccustom" fill="#25CAAC"></path>
+                <path
+                    d="M13.2464 36.9929C15.1716 38.3357 18.293 38.3357 20.2182 36.9929C22.1434 35.65 22.1434 33.4728 20.2182 32.1299C18.293 30.7871 15.1716 30.7871 13.2464 32.1299C11.3212 33.4728 11.3212 35.65 13.2464 36.9929Z"
+                    class="ccustom" fill="#25CAAC"></path>
+                <path
+                    d="M31.9011 21.9178C34.2114 23.5292 37.9571 23.5292 40.2673 21.9178C42.5776 20.3064 42.5776 17.6937 40.2673 16.0823C37.9571 14.4708 34.2114 14.4708 31.9011 16.0823C29.5909 17.6937 29.5909 20.3064 31.9011 21.9178Z"
+                    class="ccustom" fill="#25CAAC"></path>
+                <path
+                    d="M21.7322 29.6984C24.0425 31.3099 27.7881 31.3099 30.0984 29.6984C32.4086 28.087 32.4086 25.4744 30.0984 23.8629C27.7881 22.2515 24.0425 22.2515 21.7322 23.8629C19.422 25.4744 19.422 28.087 21.7322 29.6984Z"
+                    class="ccustom" fill="#25CAAC"></path>
+            </svg>
+              </a>
+      
+              <h2 class="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+                Welcome to SereneMind AI
+              </h2>
+      
+              <p class="mt-4 leading-relaxed text-white/90">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
+                quibusdam aperiam voluptatum.
+              </p>
+            </div>
+          </section>
+      
+          <main class="flex w-full h-4/5 items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
+    >
+    <div class=" h-screen w-full flex items-center justify-center">
+        <div class="bg-white shadow-lg rounded-lg w-full max-w-4xl p-6 h-4/5 flex flex-col">
+            <h1 class="text-3xl font-bold mb-6 text-center text-teal-600">SereneMind AI -CBT</h1>
+    
+            <!-- Chat Container -->
+            <div id="chatContainer" class="flex-1 overflow-y-auto p-4 bg-teal-50 rounded-lg shadow-inner mb-4 space-y-4">
+                <!-- Chat messages will appear here -->
+            </div>
+    
+            <!-- User Input -->
+            <textarea id="prompt" class="w-full p-4 rounded-lg border border-teal-300 focus:outline-none focus:border-teal-500 text-teal-900" placeholder="Enter your CBT prompt"></textarea>
+            <button id="sendPrompt" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded mt-4">Send</button>
+        </div>
+            </div>
+          </main>
+        </div>
+      </section>
+</div>
+
+        </div>
+    </main>
+
+
+<script>
+    const chatHistory = []; // Array to store chat history
+  
+  // Function to handle sending messages
+  async function sendMessage() {
+      const prompt = document.getElementById('prompt').value.trim();
+  
+      if (!prompt) {
+          alert('Please enter a prompt.');
+          return;
+      }
+  
+      // Add the user's message to the chat container
+      addMessageToChat(prompt, 'user-message', 'bg-teal-500', 'text-white', 'text-right', 'ml-auto', 'user');
+  
+      try {
+          // Send the prompt to the backend
+          const response = await fetch('http://localhost:3000/generate', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ prompt }),
+          });
+  
+          // Parse the response from the backend
+          const data = await response.json();
+          const aiResponse = data.response;
+  
+          // Add the AI's response to the chat container
+          addMessageToChat(aiResponse, 'ai-message', 'bg-teal-200', 'text-teal-800', 'text-left', 'mr-auto', 'ai');
+  
+          // Add the prompt-response pair to chat history
+          chatHistory.push({ prompt, response: aiResponse });
+  
+          // Clear the input field
+          document.getElementById('prompt').value = '';
+      } catch (error) {
+          console.error('Error:', error);
+          addMessageToChat('An error occurred. Please try again.', 'ai-message', 'bg-red-500', 'text-white', 'text-left', 'mr-auto', 'ai');
+      }
+  }
+  
+  // Send message on button click
+  document.getElementById('sendPrompt').addEventListener('click', sendMessage);
+  
+  // Send message on Enter key press
+  document.getElementById('prompt').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault(); // Prevent new line
+          sendMessage();
+      }
+  });
+  
+          function addMessageToChat(message, messageType, ...customClasses) {
+              const chatContainer = document.getElementById('chatContainer');
+              const messageWrapper = document.createElement('div');
+              const avatarWrapper = document.createElement('div');
+              const messageElement = document.createElement('div');
+              const avatarElement = document.createElement('img');
+  
+              // Set up the avatar
+              avatarElement.classList.add('w-10', 'h-10', 'rounded-full');
+              if (customClasses.includes('user')) {
+                  // avatarElement.src = 'https://i.imgur.com/5sK1Ymu.png'; // User Avatar
+                  messageWrapper.classList.add('flex', 'items-start', 'justify-end');
+                  messageElement.classList.add('bg-teal-500', 'text-white');
+                //   avatarWrapper.classList.add('ml-3'); // Space between avatar and message
+              } else {
+                  avatarElement.src = 'data:image/png;base64,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'; // AI Avatar
+                  messageWrapper.classList.add('flex', 'items-start', 'justify-start');
+                  messageElement.classList.add('bg-teal-200', 'text-teal-800');
+                  avatarWrapper.classList.add('mr-3'); // Space between avatar and message
+              }
+  
+              // Set up the message wrapper
+              messageElement.classList.add('p-4', 'rounded-lg', 'shadow', 'max-w-lg', 'break-words', ...customClasses);
+              messageElement.innerText = message;
+  
+              // Append avatar and message
+              avatarWrapper.classList.add('flex', 'items-center');
+              avatarWrapper.appendChild(avatarElement);
+              messageWrapper.appendChild(avatarWrapper);
+              messageWrapper.appendChild(messageElement);
+              chatContainer.appendChild(messageWrapper);
+  
+              // Scroll to the bottom after adding a message
+              chatContainer.scrollTop = chatContainer.scrollHeight;
+          }
+      </script>
+      <script>
+      function handleClick() {
+          document.getElementById("hidden").classList.toggle("hidden");
+      }
+      // Function to check authentication and redirect if not 
+      async function checkAuth() {
+          const token = localStorage.getItem("token");
+
+          if (!token) {
+              window.location.href = "/login.html";
+              return;
+          }
+
+          try {
+              const response = await fetch("http://localhost:3000/dashboard", {
+                  method: "GET",
+                  headers: {
+                      Authorization: `Bearer ${token}`,
+                  },
+              });
+
+              if (response.status === 401 || response.status === 403) {
+                  window.location.href = "/login.html";
+              } else if (!response.ok) {
+                  console.error("Error:", await response.text());
+                  window.location.href = "/login.html";
+              } else {
+                  const data = await response.json();
+                  console.log(data.userDetails);
+
+                  document.getElementById("user").innerHTML = data.message;
+                  // document.getElementById("userd").innerHTML = data.userDetails.first_name;
+                  // Display the username in the welcome message
+              }
+          } catch (error) {
+              console.error("Error:", error);
+              window.location.href = "/sign-in.html";
+          }
+      }
+      checkAuth();
+
+      // Add event listener to logout button
+      document
+          .getElementById("logoutButton")
+          .addEventListener("click", async () => {
+              const token = localStorage.getItem("token");
+
+              if (!token) {
+                  alert("You are not logged in");
+                  return;
+              }
+
+              try {
+                  const response = await fetch("http://localhost:3000/logout", {
+                      method: "POST",
+                      headers: {
+                          Authorization: `Bearer ${token}`,
+                      },
+                  });
+
+                  if (response.ok) {
+                      // Remove the token and redirect to login page
+                      alert("Logging off successfully");
+                      localStorage.removeItem("token");
+                      window.location.href = "/sign-in.html";
+                  } else {
+                      alert("Logout failed");
+                  }
+              } catch (error) {
+                  console.error("Error:", error);
+                  alert("An error occurred during logout");
+              }
+          });
+  </script>
+</body>
+</html>
