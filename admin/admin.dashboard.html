@@ -208,14 +208,12 @@ Doctors
                         <div class="" style="overflow: scroll; height: 30vh ;">
 
                             <div class="rounded-lg border border-gray-100">
-                                <table id="customerTable"
+                                <table border="2" id="customerTable"
                                     class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
                                     <thead class="ltr:text-left rtl:text-right">
                                         <tr>
                                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">S.no</th>
-                                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">First Name
-                                            </th>
-                                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Last Name
+                                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Full Name
                                             </th>
                                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Email</th>
                                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Username
@@ -253,9 +251,7 @@ Doctors
                     <thead class="ltr:text-left rtl:text-right">
                         <tr>
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">S.no</th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">First Name
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Last Name
+                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Full Name
                             </th>
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Email</th>
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Message
@@ -362,11 +358,11 @@ Doctors
                         const row = document.createElement('tr');
                         row.innerHTML = `
                         <td class="text-gray-700 p-3">${customer.id}</td>
-                        <td class="text-gray-700 p-3">${customer.first_name}</td>
-                        <td class="text-gray-700 p-3">${customer.last_name}</td>
+                        <td class="text-gray-700 p-3">${customer.first_name} ${customer.last_name} </td>
+
                         <td class="text-gray-700 p-3">${customer.email}</td>
                         <td class="text-gray-700 p-3">${customer.username}</td>
-                        <td class="text-gray-700 p-3">${customer.bio}</td>
+
                     `;
                         customerTableBody.appendChild(row);
                     });
@@ -377,8 +373,8 @@ Doctors
                         const row = document.createElement('tr');
                         row.innerHTML = `
                         <td class="text-gray-700 p-3">${contact.id}</td>
-                        <td class="text-gray-700 p-3">${contact.first_name}</td>
-                        <td class="text-gray-700 p-3">${contact.last_name}</td>
+                        <td class="text-gray-700 p-3">${contact.first_name} ${contact.last_name}</td>
+
                         <td class="text-gray-700 p-3">${contact.email}</td>
                         <td class="text-gray-700 p-3">${contact.message}</td>
                     `;
